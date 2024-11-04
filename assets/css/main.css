@@ -34,7 +34,7 @@
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #444444; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #5c9f24; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-hover-color: #4AAFEE; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -624,10 +624,12 @@ h6 {
 .footer .copyright {
   padding: 25px 0;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  
 }
 
 .footer .copyright p {
   margin-bottom: 0;
+  
 }
 
 .footer .credits {
@@ -1330,76 +1332,74 @@ section,
 --------------------------------------------------------------*/
 .team {
   --default-color: #ffffff;
+  --bg-color: #f9f9f9; /* Background color for member cards */
 }
 
 .team .member {
   text-align: center;
   position: relative;
   height: 100%;
+  background: var(--bg-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.team .member img {
+  width: 80px; /* Circle size */
+  height: 80px; /* Circle size */
+  border-radius: 50%;
+  position: absolute;
+  top: -40px; /* Position above the card */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 1; /* Ensure the profile image is always visible */
 }
 
 .team .member .member-info {
-  opacity: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  inset: 0;
-  transition: 0.2s;
+  opacity: 1; /* Keep the member info visible */
 }
 
 .team .member .member-info-content {
-  margin-top: -50px;
-  transition: margin 0.2s;
-}
-
-.team .member:hover .member-info {
-  background: rgba(0, 0, 0, 0.6);
-  opacity: 1;
-  transition: 0.4s;
-}
-
-.team .member:hover .member-info-content {
-  margin-top: 0;
-  transition: margin 0.4s;
+  margin-top: 20px; /* Adjust space below image */
 }
 
 .team .member h4 {
-  color: var(--contrast-color);
+  color: black; /* Change text color to black */
   font-weight: 700;
-  margin-bottom: 2px;
-  font-size: 18px;
+  margin-bottom: 5px; /* Slightly adjusted */
+  font-size: 16px; /* Adjusted font size */
 }
 
 .team .member span {
+  color: black; /* Change text color to black */
   font-style: italic;
   display: block;
-  font-size: 13px;
+  font-size: 12px; /* Adjusted font size */
 }
 
 .team .member .social {
   margin-top: 15px;
+  display: flex; /* Flexbox for horizontal alignment */
+  justify-content: center; /* Center align social icons */
 }
 
 .team .member .social a {
   transition: 0.3s;
-  color: var(--default-color);
+  color: black;
+  margin: 0 5px; /* Spacing between icons */
 }
 
 .team .member .social a:hover {
   color: var(--accent-color);
 }
 
-.team .member .social i {
-  font-size: 18px;
-  margin: 0 2px;
-}
-
 /*--------------------------------------------------------------
 # Pricing Section
 --------------------------------------------------------------*/
 .pricing .pricing-item {
-  background-color: var(--surface-color);
+  background-color: var(--surface-color);s
   padding: 60px 40px;
   box-shadow: 0 3px 20px -2px rgba(0, 0, 0, 0.1);
   height: 100%;
